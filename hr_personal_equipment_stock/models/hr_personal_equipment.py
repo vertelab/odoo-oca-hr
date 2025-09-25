@@ -46,7 +46,7 @@ class HrPersonalEquipment(models.Model):
         for line in self:
             qty = 0.0
             for move in line.move_ids.filtered(
-                lambda r: r.state == "done" and line.product_id == r.product_id
+                lambda r, current_line=line: r.state == "done" and current_line.product_id == r.product_id
             ):
                 qty += move.product_uom._compute_quantity(
                     move.product_uom_qty, line.product_uom_id
