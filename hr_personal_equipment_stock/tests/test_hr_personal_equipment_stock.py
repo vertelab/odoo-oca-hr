@@ -74,7 +74,7 @@ class TestHRPersonalEquipment(TransactionCase):
                 "is_personal_equipment": True,
                 "route_ids": [(6, 0, cls.route.ids)],
                 "qty_available": 100,
-                "type": "product",
+                "type": "consu",
                 "uom_id": cls.env.ref("uom.product_uom_unit").id,
             }
         )
